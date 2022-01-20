@@ -1,30 +1,8 @@
 import styled, { keyframes } from "styled-components";
 import { pallete } from "../themeVariables";
 
-export const FeatureInfo = ({ title, description, img, alt, reverse }) => {
-  const fromLeftAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-200px);
-  }
+export const FeatureInfo = ({ title, description, img, alt, reverse, dataAos }) => {
 
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-`;
-
-  const fromRightAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(200px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-`;
 
   const FeatureInfoContainer = styled.div`
     display: flex;
@@ -34,7 +12,6 @@ export const FeatureInfo = ({ title, description, img, alt, reverse }) => {
   `;
   const InfoBox = styled.div`
     max-width: 500px;
-    animation: ${reverse ? fromRightAnimation : fromLeftAnimation} 2s;
   `;
   const InfoTitle = styled.h3`
     text-align: left;
@@ -52,7 +29,7 @@ export const FeatureInfo = ({ title, description, img, alt, reverse }) => {
   const FeatureImage = styled.img``;
 
   return (
-    <FeatureInfoContainer>
+    <FeatureInfoContainer data-aos={dataAos}>
       <InfoBox>
         <InfoTitle>{title}</InfoTitle>
         <InfoDescription>{description}</InfoDescription>

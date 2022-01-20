@@ -1,3 +1,4 @@
+import "aos/dist/aos.css";
 import styled from "styled-components";
 import { Header } from "./Header";
 import { pallete, theme } from "../themeVariables";
@@ -45,19 +46,22 @@ const HeroInfo = styled.p`
 `;
 
 const ImgBox = styled.div`
+  z-index: 2;
   position: absolute;
   right: 0;
   top: 210px;
-  z-index: 2;
+  width: 60%;
 `;
 
-const CardImg = styled.img``;
+const CardImg = styled.img`
+  width: 80%;
+`;
 
 export const Hero = () => {
   return (
     <>
       <PinkBorder>
-        <HeroContainer>
+        <HeroContainer onScroll={(e) => console.log(e)}>
           <Header />
           <ContentContainer>
             <HeroInfoBox>

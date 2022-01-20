@@ -10,6 +10,9 @@ import best_performance_icon from "../assets/image/best_performance_icon.svg";
 import firstFeature from "../assets/image/first_feature.png";
 import secondFeature from "../assets/image/second_feature.png";
 import thirdFeature from "../assets/image/third_feature.png";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const FeaturesContainer = styled.section`
   margin: 0 ${theme.sectionMargin};
@@ -34,6 +37,10 @@ const FeaturesItensBox = styled.div`
 `;
 
 export const FeaturesSection = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <FeaturesContainer>
       <FeaturesTitle>Main Features</FeaturesTitle>
@@ -68,17 +75,20 @@ cing elit. Elementum nisi aliquet volutpat."
         />
       </FeaturesItensBox>
       <FeatureInfo
+        dataAos="fade-right"
         title="Automated Reports &amp; Widget Alerts"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet."
         img={firstFeature}
       />
       <FeatureInfo
         reverse
+        dataAos="fade-left"
         title="Automated Reports &amp; Widget Alerts"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet."
         img={secondFeature}
       />
       <FeatureInfo
+        dataAos="fade-right"
         title="Automated Reports &amp; Widget Alerts"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam. Vitae et, tortor pulvinar risus pulvinar sit amet."
         img={thirdFeature}

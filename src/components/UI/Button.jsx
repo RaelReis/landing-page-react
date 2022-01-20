@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { pallete } from "../../themeVariables";
 
-export const Button = ({ text, pink, dark, left, right }) => {
+export const Button = ({ text, pink, dark, left, right, ...rest }) => {
   const align =
     (left && { marginRight: "auto" }) || (right && { marginLeft: "auto" });
 
   const DarkButton = styled.button`
     border: 1px solid transparent;
-
     border-radius: 99px;
     padding: 10px 40px;
     background: transparent;
@@ -15,13 +14,13 @@ export const Button = ({ text, pink, dark, left, right }) => {
     text-transform: capitalize;
     margin: 0 5px;
     font-family: Roboto, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
 
     &:hover {
       border: 1px solid ${pallete.borderColor};
     }
-
-    font-size: 16px;
-    cursor: pointer;
   `;
 
   const PinkButton = styled.button`
@@ -32,8 +31,9 @@ export const Button = ({ text, pink, dark, left, right }) => {
     padding: 15px 70px;
     margin: 0 5px;
     font-family: Roboto, sans-serif;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
   `;
 
   return (
